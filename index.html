@@ -609,6 +609,65 @@ h2{font-size:var(--fs-h2);line-height:1.07;margin:0;font-weight:400;letter-spaci
   .lk-names{flex-direction:column;gap:2px}
   .lk-names .dot{display:none}
 }
+
+/* ============ ITERATION 08 · section 07 · team, evidence, originality ============ */
+.c-record .wrap{max-width:1060px}
+.c-record h2{margin-bottom:14px}
+.c-record .lead{margin-bottom:clamp(30px,4vw,44px)}
+.rec-block{border-top:1px solid var(--rule);padding-top:14px;margin-top:clamp(30px,4vw,46px)}
+.rec-block:first-of-type{margin-top:0}
+.rec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+.rec-h h3{margin:0;font-family:var(--ff-head);font-weight:450;font-size:clamp(21px,2.2vw,26px);color:var(--head);letter-spacing:-.005em}
+.rec-h .hint{font-family:var(--ff-mono);font-size:11.5px;color:var(--muted)}
+/* team: one row per person, CV summary on demand */
+.team{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,3.4vw,48px)}
+.person{border-bottom:1px solid var(--line)}
+.person summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;padding:16px 0}
+.person summary::-webkit-details-marker{display:none}
+.person .mono{width:42px;height:42px;border-radius:var(--r-panel);display:grid;place-items:center;background:var(--sage);color:var(--teal-deep);font-family:var(--ff-head);font-size:17px;font-weight:500}
+.person.lead-p .mono{background:var(--navy);color:#F3F1EA}
+.person .who b{display:block;font-family:var(--ff-head);font-weight:500;font-size:19px;line-height:1.2;color:var(--head)}
+.person .who span{display:block;font-size:13.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+.person summary::after{content:"+";width:22px;height:22px;display:grid;place-items:center;border:1px solid var(--sage-deep);border-radius:50%;color:var(--teal-deep);font-size:15px;line-height:1;transition:transform var(--dur) var(--ease),background var(--dur) var(--ease)}
+.person[open] summary::after{transform:rotate(45deg);background:var(--sage)}
+.person summary:hover .who b{color:var(--teal-deep)}
+.person summary:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+.cv{padding:0 0 18px 0;font-size:14.5px;line-height:1.55;color:var(--ink)}
+.cv .role{margin:0 0 10px;font-family:var(--ff-mono);font-size:11.5px;color:var(--teal-deep)}
+.cv ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+.cv li{position:relative;padding-left:18px}
+.cv li::before{content:"";position:absolute;left:0;top:.58em;width:7px;height:7px;border-radius:1.5px;background:var(--teal)}
+.cv .links{margin-top:12px;font-family:var(--ff-mono);font-size:12px}
+.cv a{color:var(--teal-deep);text-underline-offset:3px}
+/* evidence: publication ledger */
+.pubs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pub{display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,15rem);gap:6px clamp(16px,2.4vw,32px);padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.pub .yr{font-family:var(--ff-head);font-size:24px;color:var(--navy);font-variant-numeric:lining-nums tabular-nums}
+.pub .t{font-family:var(--ff-head);font-size:17.5px;line-height:1.35;color:var(--head)}
+.pub .a{display:block;margin-top:4px;font-size:13.5px;color:var(--muted)}
+.pub .a b{color:var(--ink);font-weight:600}
+.pub .v{display:block;margin-top:4px;font-size:13.5px;color:var(--ink);font-style:italic}
+.pub .v a{color:var(--teal-deep);font-style:normal;font-family:var(--ff-mono);font-size:12px;text-underline-offset:3px;margin-left:6px}
+.pub .step-k{font-size:13.5px;line-height:1.45;color:var(--ink);padding-left:12px;border-left:2px solid var(--sage-2)}
+.pub .step-k em{display:block;font-style:normal;font-family:var(--ff-mono);font-size:11px;color:var(--teal-deep);margin-bottom:2px}
+.pub.now-p .yr{color:var(--teal)}
+.pub.now-p .step-k{border-left-color:var(--teal)}
+/* originality statement */
+.decl{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);align-items:start}
+.decl blockquote{margin:0;font-family:var(--ff-head);font-size:clamp(18px,1.9vw,21px);line-height:1.5;color:var(--head);font-weight:400}
+.decl ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.decl li{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.45;color:var(--ink)}
+.decl li i{flex:none;width:var(--cell);height:var(--cell);margin-top:.42em;border-radius:var(--r-cell);background:var(--teal)}
+.decl li i.w{background:none;border:1.5px solid var(--amber-ink)}
+.decl li i.s{background:none;border:1.5px dashed var(--sage-deep)}
+.rights{margin-top:clamp(28px,3.6vw,40px);font-size:var(--fs-small);color:var(--muted)}
+@media(max-width:820px){
+  .team{grid-template-columns:1fr}
+  .pub{grid-template-columns:56px minmax(0,1fr)}
+  .pub .step-k{grid-column:2}
+  .decl{grid-template-columns:1fr}
+}
+@media(max-width:480px){ .cv{padding-left:0} .pub{grid-template-columns:1fr} .pub .step-k{grid-column:auto} }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400..500&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..500&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -628,6 +687,7 @@ h2{font-size:var(--fs-h2);line-height:1.07;margin:0;font-weight:400;letter-spaci
   <a href="#s4"><span>Validation</span><span class="tick"></span></a>
   <a href="#s5"><span>Panel</span><span class="tick"></span></a>
   <a href="#s6"><span>Impact</span><span class="tick"></span></a>
+  <a href="#s7"><span>Team</span><span class="tick"></span></a>
 </nav>
 
 <main>
@@ -806,6 +866,50 @@ h2{font-size:var(--fs-h2);line-height:1.07;margin:0;font-weight:400;letter-spaci
       <span class="chip">Transferable · One Health</span>
     </div>
     <p class="foot">Biohacking Lab · Biodigital Innovation Lab · CUTlajomulco, Universidad de Guadalajara<br>Information-guided target selection for a complementary multiplexed PCR panel</p>
+  </div></section>
+
+  <!-- 07 · the record: team, evidence, originality -->
+  <section class="step c-record" id="s7" data-label="Team"><div class="wrap">
+    <span class="eyebrow"><span class="st">07</span> Team · evidence · originality <span class="rule"></span></span>
+    <h2>The people and the record behind the panel.</h2>
+    <p class="lead">A team from two Universidad de Guadalajara laboratories, building on six years of peer-reviewed work. Select a name for a short CV.</p>
+
+    <div class="rec-block" id="team">
+      <div class="rec-h"><h3>Team information</h3><span class="hint">4 members · select a name to expand</span></div>
+      <div class="team"><details class="person lead-p">
+        <summary><span class="who"><b>Omar Paredes</b><span>Team leader · Universidad de Guadalajara</span></span></summary>
+        <div class="cv"><p class="role">Computational researcher in biomedicine and genomics</p><ul><li>Ph.D. and M.Sc. in Electronics and Computer Science, B.Sc. in Biomedical Engineering — CUCEI, Universidad de Guadalajara. Best Doctoral Thesis Award 2024 (SICyT Jalisco).</li><li>Director, Biodigital Innovation Lab. National Researcher SNII Level I; 45 indexed publications, h-index 8 (Scopus).</li><li>Six-year research line reading genomes as documents — from bacteria (2020) to 733 Influenza A genomes (2026).</li><li>Governing Board, International Society of Code Biology; Editorial Board, <i>Scientific Reports</i>.</li><li>Scientific consultant to IVF 2.0 Ltd, leading design and clinical validation of AI systems now in international clinical use.</li><li>Head of the CUCEI Innovation and Entrepreneurship Center (2023–2026), assessing university projects for technology readiness.</li></ul><p class="links"><a href="mailto:omar.paredes@academicos.udg.mx">omar.paredes@academicos.udg.mx</a></p></div>
+      </details><details class="person">
+        <summary><span class="who"><b>Lorena Malinalli López Medina</b><span>Ph.D. candidate · CUCEI, Universidad de Guadalajara</span></span></summary>
+        <div class="cv"><p class="role">Doctoral research directly on this panel</p><ul><li>Ph.D. in Microbiology and Molecular Biotechnology (2024–). Thesis: <i>Determination of optimal primers for multiplex genomic diagnosis of avian influenza</i>.</li><li>M.Sc. in Bioengineering and Intelligent Computing; B.Sc. in Biomedical Engineering — CUCEI, Universidad de Guadalajara.</li><li>Co-author of the Influenza A study (Trajectories 2026) and of work in <i>BioSystems</i> (2025) and <i>Franklin Open</i> (2024).</li><li>Collaborating instructor in Biomedical Engineering, CUTlajomulco.</li></ul><p class="links"><a href="mailto:lorena.lopez4703@alumnos.udg.mx">lorena.lopez4703@alumnos.udg.mx</a> · <a href="https://orcid.org/0000-0003-4330-7208" target="_blank" rel="noopener">ORCID 0000-0003-4330-7208</a></p></div>
+      </details><details class="person">
+        <summary><span class="who"><b>Moisés Alberto García Miranda</b><span>Research assistant · CUTlajomulco, Universidad de Guadalajara</span></span></summary>
+        <div class="cv"><p class="role">Biomedical engineering · full-stack and data</p><ul><li>B.Sc. in Biomedical Engineering (2023–), CUTlajomulco, Universidad de Guadalajara.</li><li>Research assistant at the Biodigital Innovation Lab and the Biohacking Lab.</li><li>Builds web platforms and data pipelines (Python, Next.js, Supabase) and embedded machine learning (TinyML).</li><li>Finalist, Jalisco MedTech 2026, with a wearable for shoulder rehabilitation.</li></ul><p class="links"><a href="mailto:moises.garcia5867@alumnos.udg.mx">moises.garcia5867@alumnos.udg.mx</a> · <a href="https://github.com/moiseiseiseis" target="_blank" rel="noopener">GitHub</a></p></div>
+      </details><details class="person">
+        <summary><span class="who"><b>Jesús Isaías Ascencio Iñiguez</b><span>Student researcher · CUTlajomulco, Universidad de Guadalajara</span></span></summary>
+        <div class="cv"><p class="role">Biomedical engineering · embedded systems and edge ML</p><ul><li>B.Sc. in Biomedical Engineering (2023–), CUTlajomulco, Universidad de Guadalajara.</li><li>Co-developed a portable wrist orthosis prototype for Parkinsonian tremor detection with on-device machine learning.</li><li>VR developer of BioVR, an educational simulator of protein folding (Unity, C#).</li><li>Poster presenter, Engineering Week, CUTlajomulco.</li></ul><p class="links"><a href="mailto:jesus.ascencio0382@alumnos.udg.mx">jesus.ascencio0382@alumnos.udg.mx</a> · <a href="https://github.com/Ascenci-97" target="_blank" rel="noopener">GitHub</a></p></div>
+      </details></div>
+    </div>
+
+    <div class="rec-block" id="evidence">
+      <div class="rec-h"><h3>Research / validation evidence</h3><span class="hint">Peer-reviewed line · 2020 → 2026</span></div>
+      <ol class="pubs"><li class="pub"><span class="yr">2020</span><div><span class="t">Whole-genome k-mer topic modeling associates bacterial families.</span><span class="a">Borrayo E, May-Canché I, <b>Paredes O</b>, Morales JA, Romo-Vázquez R, Vélez-Pérez H</span><span class="v">Genes 11(2):197<a href="https://doi.org/10.3390/genes11020197" target="_blank" rel="noopener">DOI</a></span></div><p class="step-k"><em>Origin</em>Reading whole genomes without supervision recovers bacterial taxonomy.</p></li><li class="pub"><span class="yr">2021</span><div><span class="t">Unraveling the hCoV-19 informational architecture.</span><span class="a">Aguilar-Valdez S, Morales JA, <b>Paredes O</b></span><span class="v">IEEE EMBC 2021, 2392–2395<a href="https://doi.org/10.1109/EMBC46164.2021.9630954" target="_blank" rel="noopener">DOI</a></span></div><p class="step-k"><em>Extension</em>The approach carries over to respiratory viruses.</p></li><li class="pub"><span class="yr">2024</span><div><span class="t">Decoding semiotic minimal genome: a non-genocentric approach.</span><span class="a">Gómez-Márquez C, Morales JA, Romero-Gutiérrez T, <b>Paredes O</b>, Borrayo E</span><span class="v">Frontiers in Microbiology 15:1356050<a href="https://doi.org/10.3389/fmicb.2024.1356050" target="_blank" rel="noopener">DOI</a></span></div><p class="step-k"><em>Formalisation</em>Separates informative from functional content in the genetic code.</p></li><li class="pub now-p"><span class="yr">2026</span><div><span class="t">Entropy-based k-mer stratification uncovers host-associated genomic signatures in Influenza A viruses.</span><span class="a">Rivero D, Ballesteros-Pérez A, López-Medina M, Sotelo-Rodríguez M, Romero-Gutiérrez T, <b>Paredes O</b></span><span class="v">Trajectories 2026, Universidad de Guadalajara — accepted, in press</span></div><p class="step-k"><em>Direct antecedent</em>733 Influenza A genomes: a small informative fraction carries the host-associated signal (sections 02–04).</p></li></ol>
+      <details class="tag"><summary><span class="k">What the figures on this page rest on</span></summary><p>The 733-genome result and the out-of-sample classification (99.80 % binary, nested cross-validation; 90.50 % ten-subtype, 5-fold cross-validation) are computational validation. The 100 % / 83.6 % complementary rule is in-sample. The 4–6 primer pairs are candidates; laboratory PCR testing is the next stage and has not been performed yet.</p></details>
+    </div>
+
+    <div class="rec-block" id="originality">
+      <div class="rec-h"><h3>Originality / declaration</h3></div>
+      <div class="decl">
+        <blockquote>This project is the original work of the team named above. The target-selection approach was developed by the team at the Universidad de Guadalajara, and every result shown here comes from our own analyses and publications. Sources are cited; nothing has been copied from other work.</blockquote>
+        <ul>
+          <li><i></i><span>Numbers on this page are drawn from our computational validation and the publications listed above.</span></li>
+          <li><i class="w"></i><span>Results marked <b>in-sample</b> have not yet been tested on independent data.</span></li>
+          <li><i class="s"></i><span>Figures marked <b>conceptual illustration</b> are schematics, not observed data.</span></li>
+          <li><i></i><span>The selection procedure itself is not disclosed on this page.</span></li>
+        </ul>
+      </div>
+      <p class="rights">© 2026 Biohacking Lab · Biodigital Innovation Lab, Universidad de Guadalajara. All rights reserved.</p>
+    </div>
   </div></section>
 </main>
 
